@@ -1,4 +1,5 @@
 require_relative 'hand'
+
 class Player
   attr_reader :name, :hand
   attr_accessor :score
@@ -8,10 +9,6 @@ class Player
     @score = 0
     @hand = Hand.new
   end
-
-  # def draw
-  #
-  # end
 
   # カードを引くか選択できるのはplayerのみなのでprivateに
   def hit?

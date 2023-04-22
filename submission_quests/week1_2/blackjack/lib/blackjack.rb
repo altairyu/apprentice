@@ -1,5 +1,3 @@
-require 'debug'
-
 require_relative 'blackjack_controller'
 
 game = BlackjackController.new
