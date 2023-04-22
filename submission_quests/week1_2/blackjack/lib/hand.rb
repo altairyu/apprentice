@@ -34,17 +34,7 @@ class Hand
     end
   end
 
-  # ブラックジャックかチェック
-  # def blackjack?
-  #   cards.include?
-  # end
-  #
   def bust?(score)
     true if score > 21
-  end
-
-  # dealerのループ用
-  def under_17?(score)
-    true if score <= 17
   end
 end

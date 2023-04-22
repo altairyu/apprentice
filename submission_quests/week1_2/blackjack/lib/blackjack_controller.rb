@@ -1,6 +1,7 @@
 require_relative 'deck'
 require_relative 'player'
 require_relative 'dealer'
+
 class BlackjackController
   def initialize
     puts 'ブラックジャックを開始します。'
@@ -41,7 +42,7 @@ class BlackjackController
     # 2枚目のshow
     @dealer.hand.show(@dealer)
 
-    while @dealer.hand.under_17?(@dealer.score)
+    while @dealer.under_17?(@dealer.score)
       deal_and_add_score(@dealer)
       @dealer.hand.show(@dealer)
     end
