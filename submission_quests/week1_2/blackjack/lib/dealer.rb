@@ -4,7 +4,7 @@ class Dealer < Player
     @name = 'ディーラー'
   end
 
-  # dealerのループ用
+  # ループ用
   def under_17?(score)
     true if score <= 17
   end
