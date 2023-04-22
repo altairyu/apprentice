@@ -1,4 +1,4 @@
-require_relative 'blackjack_controller'
+require_relative 'lib/kjack_controller'
 
 game = BlackjackController.new
 game.start

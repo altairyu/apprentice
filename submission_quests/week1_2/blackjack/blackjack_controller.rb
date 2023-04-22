@@ -1,4 +1,4 @@
-require_relative 'deck'
+require_relative 'lib/'
 require_relative 'player'
 require_relative 'dealer'
 
