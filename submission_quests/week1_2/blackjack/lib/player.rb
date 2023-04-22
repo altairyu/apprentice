@@ -10,7 +10,7 @@ class Player
     @hand = Hand.new
   end
 
-  # カードを引くか選択できるのはplayerのみなのでprivateに
+  # サブクラスでは使わない。blackjack_controllerから呼びたいのでpublicのままに。
   def hit?
     loop do
       input = gets.chomp.downcase
