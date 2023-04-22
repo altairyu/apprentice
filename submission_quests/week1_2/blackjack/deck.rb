@@ -1,4 +1,4 @@
-require_relative '../d'
+require_relative 'card'
 
 class Deck
   def initialize
