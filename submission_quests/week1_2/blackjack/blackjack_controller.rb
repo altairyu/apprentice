@@ -65,7 +65,7 @@ class BlackjackController
 
   def inform_bust
     puts 'バスト！！ 21点を超えてしまいました。あなたの負けです。'
-    end_game
+    finish
   end
 
   def show_final_scores
@@ -83,7 +83,7 @@ class BlackjackController
     end
   end
 
-  def end_game
+  def finish
     puts 'ブラックジャックを終了します。'
     exit
   end
