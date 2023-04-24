@@ -45,6 +45,7 @@ class BlackjackController
     while @dealer.under_17?(@dealer.score)
       deal_and_add_score(@dealer)
       @dealer.hand.show(@dealer)
+      inform_dealer_bust if @dealer.hand.bust?(@dealer.score)
     end
   end
 
@@ -65,6 +66,11 @@ class BlackjackController
 
   def inform_bust
     puts 'バスト！！ 21点を超えてしまいました。あなたの負けです。'
+    finish
+  end
+
+  def inform_dealer_bust
+    puts 'ディーラーがバストしました。あなたの勝利です！！'
     finish
   end
 
