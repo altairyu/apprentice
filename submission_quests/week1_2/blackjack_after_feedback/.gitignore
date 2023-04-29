@@ -1,0 +1,4 @@
+*.yml
+vendor/
+.bundle/
+*.idea
