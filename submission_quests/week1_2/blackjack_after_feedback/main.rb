@@ -1,6 +1,7 @@
 require_relative 'Game'
 
 game = Game.new
+game.play
 # game.start
 # game.loop_player_turn
 # game.loop_dealer_turn

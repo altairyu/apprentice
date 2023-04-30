@@ -10,6 +10,10 @@ class Game
     @dealer = Dealer.new
   end
 
+  def play
+
+  end
+
   def start
     2.times do
       deal_and_add_score(@player)
