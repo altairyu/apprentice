@@ -2,7 +2,7 @@ require_relative 'deck'
 require_relative 'player'
 require_relative 'dealer'
 
-class BlackjackController
+class Game
   def initialize
     puts 'ブラックジャックを開始します。'
     @deck = Deck.new
