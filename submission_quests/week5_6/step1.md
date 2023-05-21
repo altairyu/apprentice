@@ -27,7 +27,7 @@
 | program_detail | TEXT            | NO |         |  |                |
 
 
-### テーブル：program_schedule
+### テーブル：program_schedules
 | カラム名                | データ型            | NULL | キー                                     | 初期値 | AUTO INCREMENT |
 |---------------------|-----------------|------|----------------------------------------|-----|----------------|
 | program_schedule_id | BIGINT UNSIGNED | NO   | PRIMARY                                |     | YES            |
@@ -65,25 +65,26 @@
 - 外部キー制約：program_id に対して、programsテーブルのprograms_idカラムから設定
 
 ### テーブル：episodes
-| カラム名           | データ型            | NULL | キー                          | 初期値 | AUTO INCREMENT |
-|----------------|-----------------|----|-----------------------------|---|----------------|
-| episode_id     | INT UNSIGNED    | NO | PRIMARY                     |   | YES            |
-| season_id      | INT UNSIGNED    | NO | FOREIGN (seasons.season_id) |   |                |
-| episode_number | INT UNSIGNED    | NO |                             |   |                |
-| episode_title  | VARCHAR(100)    | NO |                             |   |                |
-| episode_detail | TEXT            | NO |                             |   |                |
-| duration       | TIME            | NO |                             |   |                |
-| release_date   | DATE            | NO |                             |   |                |
-| views_count    | BIGINT UNSIGNED | NO |                             | 0 |                | 
+| カラム名           | データ型            | NULL | キー                            | 初期値 | AUTO INCREMENT |
+|----------------|-----------------|------|-------------------------------|---|----------------|
+| episode_id     | INT UNSIGNED    | NO   | PRIMARY                       |   | YES            |
+| program_id     | INT UNSIGNED    | NO   | FOREIGN (programs.program_id) |     |                |
+| season_id      | INT UNSIGNED    | YES  | FOREIGN (seasons.season_id)   |   |                |
+| episode_number | INT UNSIGNED    | YES  |                               |   |                |
+| episode_title  | VARCHAR(100)    | NO   |                               |   |                |
+| episode_detail | TEXT            | NO   |                               |   |                |
+| duration       | TIME            | NO   |                               |   |                |
+| release_date   | DATE            | NO   |                               |   |                | 
+- 外部キー制約：program_id に対して、programsテーブルのprogram_idカラムから設定
 - 外部キー制約：season_id に対して、seasonsテーブルのseason_idカラムから設定
 
-### テーブル：views
+### テーブル：view_counts
 
-| カラム名            | データ型            | NULL | キー                                      | 初期値 | AUTO INCREMENT |
-|-----------------|-----------------|------|-----------------------------------------|-----|----------------|
-| view_id         | INT UNSIGNED    | NO   | PRIMARY                                 |     | YES            |
-| episode_id      | INT UNSIGNED    | NO   | FOREIGN (episodes.episode_id)           |     |                |
-| program_slot_id | INT UNSIGNED    | NO   | FOREIGN (program_slots.program_slot_id) |     |                |
-| view_count      | BIGINT UNSIGNED | NO   |                                         | 0   |                |
+| カラム名             | データ型            | NULL | キー                                      | 初期値 | AUTO INCREMENT |
+|------------------|-----------------|------|-----------------------------------------|-----|----------------|
+| view_count_id    | INT UNSIGNED    | NO   | PRIMARY                                 |     | YES            |
+| episode_id       | INT UNSIGNED    | NO   | FOREIGN (episodes.episode_id)           |     |                |
+| program_slot_id  | INT UNSIGNED    | NO   | FOREIGN (program_slots.program_slot_id) |     |                |
+| view_count       | BIGINT UNSIGNED | NO   |                                         | 0   |                |
 - 外部キー制約：episode_id に対して、episodesテーブルのseason_idカラムから設定
 - 外部キー制約：program_slot_id に対して、program_slotsテーブルのprogram_slot_idカラムから設定
